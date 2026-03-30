@@ -13,32 +13,41 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
-        Task::create([
-            'title' => 'Complete Project Documentation',
-            'due_date' => Carbon::now()->addDays(2),
-            'priority' => 'high',
-            'status' => 'pending'
-        ]);
+        // Use updateOrCreate to avoid duplicates and allow re-deployment
+        Task::updateOrCreate(
+            ['title' => 'Project Documentation'],
+            [
+                'due_date' => Carbon::today()->addDays(5)->toDateString(),
+                'priority' => 'high',
+                'status' => 'pending'
+            ]
+        );
 
-        Task::create([
-            'title' => 'Code Review for Phase 1',
-            'due_date' => Carbon::now()->addDay(),
-            'priority' => 'medium',
-            'status' => 'in_progress'
-        ]);
+        Task::updateOrCreate(
+            ['title' => 'Code Review Phase 1'],
+            [
+                'due_date' => Carbon::today()->addDays(2)->toDateString(),
+                'priority' => 'medium',
+                'status' => 'in_progress'
+            ]
+        );
 
-        Task::create([
-            'title' => 'Submit Timesheets',
-            'due_date' => Carbon::today(),
-            'priority' => 'low',
-            'status' => 'done'
-        ]);
+        Task::updateOrCreate(
+            ['title' => 'Submit Timesheets'],
+            [
+                'due_date' => Carbon::today()->toDateString(),
+                'priority' => 'low',
+                'status' => 'done'
+            ]
+        );
 
-        Task::create([
-            'title' => 'Sprint Planning',
-            'due_date' => Carbon::now()->addDays(5),
-            'priority' => 'high',
-            'status' => 'pending'
-        ]);
+        Task::updateOrCreate(
+            ['title' => 'Client Sprint Meeting'],
+            [
+                'due_date' => Carbon::today()->addDays(7)->toDateString(),
+                'priority' => 'high',
+                'status' => 'pending'
+            ]
+        );
     }
 }
