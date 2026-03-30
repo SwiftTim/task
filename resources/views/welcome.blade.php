@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
             --navy: #0d1b2e;
@@ -40,7 +33,7 @@
             min-height: 100vh;
         }
 
-        /* ── TOPBAR ── */
+        /* -- TOPBAR -- */
         .topbar {
             background: var(--navy-mid);
             border-bottom: 1px solid var(--navy-border);
@@ -117,18 +110,16 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .btn-primary:hover {
-            background: var(--gold-light);
-        }
+        .btn-primary:hover { background: var(--gold-light); }
 
-        /* ── MAIN LAYOUT ── */
+        /* -- MAIN LAYOUT -- */
         .page {
             max-width: 1280px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* ── PAGE HEADER ── */
+        /* -- PAGE HEADER -- */
         .page-header {
             margin-bottom: 2rem;
         }
@@ -145,7 +136,7 @@
             margin-top: 4px;
         }
 
-        /* ── STATS ROW ── */
+        /* -- STATS ROW -- */
         .stats-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -176,15 +167,13 @@
             line-height: 1;
         }
 
-        .stat-gold {
-            color: var(--gold-light);
-        }
+        .stat-gold { color: var(--gold-light); }
 
         .stat-card-accent {
             border-left: 3px solid var(--gold);
         }
 
-        /* ── CONTROLS ── */
+        /* -- CONTROLS -- */
         .controls {
             display: flex;
             gap: 1rem;
@@ -220,11 +209,9 @@
             color: var(--white);
         }
 
-        .filter-btn:hover:not(.active) {
-            color: var(--text-primary);
-        }
+        .filter-btn:hover:not(.active) { color: var(--text-primary); }
 
-        /* ── TASK TABLE ── */
+        /* -- TASK TABLE -- */
         .table-wrap {
             background: var(--navy-mid);
             border: 1px solid var(--navy-border);
@@ -239,7 +226,7 @@
             height: 42px;
             align-items: center;
             border-bottom: 1px solid var(--navy-border);
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255,255,255,0.02);
         }
 
         .th {
@@ -256,17 +243,12 @@
             padding: 0 1.5rem;
             height: 60px;
             align-items: center;
-            border-bottom: 1px solid rgba(38, 61, 92, 0.5);
+            border-bottom: 1px solid rgba(38,61,92,0.5);
             transition: background 0.1s;
         }
 
-        .task-row:last-child {
-            border-bottom: none;
-        }
-
-        .task-row:hover {
-            background: rgba(255, 255, 255, 0.025);
-        }
+        .task-row:last-child { border-bottom: none; }
+        .task-row:hover { background: rgba(255,255,255,0.025); }
 
         .task-title-cell {
             display: flex;
@@ -285,17 +267,9 @@
             flex-shrink: 0;
         }
 
-        .dot-high {
-            background: var(--danger);
-        }
-
-        .dot-medium {
-            background: var(--gold);
-        }
-
-        .dot-low {
-            background: var(--success);
-        }
+        .dot-high   { background: var(--danger); }
+        .dot-medium { background: var(--gold); }
+        .dot-low    { background: var(--success); }
 
         .task-title-text {
             white-space: nowrap;
@@ -320,23 +294,9 @@
             letter-spacing: 0.5px;
         }
 
-        .pill-high {
-            background: rgba(224, 82, 82, 0.12);
-            color: #f08080;
-            border: 1px solid rgba(224, 82, 82, 0.2);
-        }
-
-        .pill-medium {
-            background: rgba(201, 151, 44, 0.12);
-            color: #e4b44a;
-            border: 1px solid rgba(201, 151, 44, 0.2);
-        }
-
-        .pill-low {
-            background: rgba(58, 170, 111, 0.12);
-            color: #5cc991;
-            border: 1px solid rgba(58, 170, 111, 0.2);
-        }
+        .pill-high   { background: rgba(224,82,82,0.12);  color: #f08080; border: 1px solid rgba(224,82,82,0.2);  }
+        .pill-medium { background: rgba(201,151,44,0.12); color: #e4b44a; border: 1px solid rgba(201,151,44,0.2); }
+        .pill-low    { background: rgba(58,170,111,0.12); color: #5cc991; border: 1px solid rgba(58,170,111,0.2); }
 
         /* Status pill */
         .status-pill {
@@ -349,23 +309,9 @@
             font-weight: 500;
         }
 
-        .status-pending {
-            background: rgba(78, 107, 153, 0.2);
-            color: #7a9cc4;
-            border: 1px solid rgba(78, 107, 153, 0.3);
-        }
-
-        .status-in_progress {
-            background: rgba(201, 151, 44, 0.12);
-            color: #e4b44a;
-            border: 1px solid rgba(201, 151, 44, 0.2);
-        }
-
-        .status-done {
-            background: rgba(58, 170, 111, 0.12);
-            color: #5cc991;
-            border: 1px solid rgba(58, 170, 111, 0.2);
-        }
+        .status-pending    { background: rgba(78,107,153,0.2);  color: #7a9cc4; border: 1px solid rgba(78,107,153,0.3); }
+        .status-in_progress{ background: rgba(201,151,44,0.12); color: #e4b44a; border: 1px solid rgba(201,151,44,0.2); }
+        .status-done       { background: rgba(58,170,111,0.12); color: #5cc991; border: 1px solid rgba(58,170,111,0.2); }
 
         .status-dot {
             width: 6px;
@@ -398,27 +344,23 @@
             color: var(--navy);
         }
 
-        .btn-advance:hover {
-            background: var(--gold-light);
-        }
+        .btn-advance:hover { background: var(--gold-light); }
 
         .btn-delete {
-            background: rgba(224, 82, 82, 0.1);
+            background: rgba(224,82,82,0.1);
             color: #f08080;
-            border: 1px solid rgba(224, 82, 82, 0.2);
+            border: 1px solid rgba(224,82,82,0.2);
         }
 
-        .btn-delete:hover {
-            background: rgba(224, 82, 82, 0.2);
-        }
+        .btn-delete:hover { background: rgba(224,82,82,0.2); }
 
         .btn-disabled {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255,255,255,0.04);
             color: var(--text-muted);
             cursor: default;
         }
 
-        /* ── EMPTY STATE ── */
+        /* -- EMPTY STATE -- */
         .empty-state {
             text-align: center;
             padding: 4rem 2rem;
@@ -435,9 +377,7 @@
             margin: 0 auto 1rem;
         }
 
-        .empty-icon svg {
-            opacity: 0.4;
-        }
+        .empty-icon svg { opacity: 0.4; }
 
         .empty-title {
             font-size: 15px;
@@ -451,7 +391,7 @@
             margin-top: 4px;
         }
 
-        /* ── MODAL ── */
+        /* -- MODAL -- */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -495,9 +435,7 @@
             font-size: 20px;
         }
 
-        .modal-close:hover {
-            color: var(--white);
-        }
+        .modal-close:hover { color: var(--white); }
 
         .gold-bar {
             height: 3px;
@@ -507,9 +445,7 @@
             width: 40px;
         }
 
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
+        .form-group { margin-bottom: 1.25rem; }
 
         .form-label {
             display: block;
@@ -521,8 +457,7 @@
             margin-bottom: 8px;
         }
 
-        .form-input,
-        .form-select {
+        .form-input, .form-select {
             width: 100%;
             background: var(--navy);
             border: 1px solid var(--navy-border);
@@ -535,14 +470,11 @@
             transition: border-color 0.15s;
         }
 
-        .form-input:focus,
-        .form-select:focus {
+        .form-input:focus, .form-select:focus {
             border-color: var(--gold);
         }
 
-        .form-select option {
-            background: var(--navy-mid);
-        }
+        .form-select option { background: var(--navy-mid); }
 
         .form-actions {
             display: flex;
@@ -564,10 +496,7 @@
             transition: all 0.12s;
         }
 
-        .btn-cancel:hover {
-            color: var(--white);
-            border-color: var(--text-muted);
-        }
+        .btn-cancel:hover { color: var(--white); border-color: var(--text-muted); }
 
         .btn-submit {
             flex: 2;
@@ -583,11 +512,9 @@
             transition: background 0.15s;
         }
 
-        .btn-submit:hover {
-            background: var(--gold-light);
-        }
+        .btn-submit:hover { background: var(--gold-light); }
 
-        /* ── TOAST ── */
+        /* -- TOAST -- */
         #toast {
             position: fixed;
             bottom: 1.5rem;
@@ -610,7 +537,7 @@
             color: #f08080 !important;
         }
 
-        /* ── DIVIDER ── */
+        /* -- DIVIDER -- */
         .section-divider {
             display: flex;
             align-items: center;
@@ -633,7 +560,7 @@
             background: var(--navy-border);
         }
 
-        /* ── FOOTER ── */
+        /* -- FOOTER -- */
         .footer {
             margin-top: 3rem;
             padding: 1.5rem 0 0;
@@ -648,191 +575,174 @@
             color: var(--text-muted);
         }
 
-        .footer-brand span {
-            color: var(--gold);
-        }
+        .footer-brand span { color: var(--gold); }
 
         @media (max-width: 900px) {
-            .stats-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .table-header-row,
-            .task-row {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .table-header-row, .task-row {
                 grid-template-columns: 2fr 1fr 1fr;
             }
-
-            .th:nth-child(4),
-            .th:nth-child(5),
-            .cell:nth-child(4),
-            .row-actions {
-                display: none;
-            }
+            .th:nth-child(4), .th:nth-child(5),
+            .cell:nth-child(4), .row-actions { display: none; }
         }
     </style>
 </head>
-
 <body>
 
-    <div id="toast"></div>
+<div id="toast"></div>
 
-    <!-- ── TOPBAR ── -->
-    <div class="topbar">
-        <div class="logo">
-            <div class="logo-mark">T</div>
+<!-- -- TOPBAR -- -->
+<div class="topbar">
+    <div class="logo">
+        <div class="logo-mark">T</div>
         <div>
             <div class="logo-text">Task Manager</div>
-            <div class="logo-sub">Internal System</div>
+            <div class="logo-sub">Operations System</div>
         </div>
+    </div>
+    <div class="topbar-right">
+        <span class="badge-date" id="today-date"></span>
+        <button class="btn-primary" onclick="openModal()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Task
+        </button>
+    </div>
+</div>
+
+<!-- -- PAGE -- -->
+<div class="page">
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="page-title">Management Dashboard</div>
+        <div class="page-subtitle">Internal platform for task operations</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+        <div class="stat-card stat-card-accent">
+            <div class="stat-label">Total Tasks</div>
+            <div class="stat-value" id="stat-total">—</div>
         </div>
-        <div class="topbar-right">
-            <span class="badge-date" id="today-date"></span>
-            <button class="btn-primary" onclick="openModal()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
-                New Task
-            </button>
+        <div class="stat-card">
+            <div class="stat-label">Pending</div>
+            <div class="stat-value" id="stat-pending">—</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">In Progress</div>
+            <div class="stat-value stat-gold" id="stat-inprogress">—</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Completed</div>
+            <div class="stat-value" style="color: #5cc991" id="stat-done">—</div>
         </div>
     </div>
 
-    <!-- ── PAGE ── -->
-    <div class="page">
-
-        <!-- Header -->
-        <div class="page-header">
-            <div class="page-title">Tasks Dashboard</div>
-        <div class="page-subtitle">Dashboard for internal task operations</div>
-        </div>
-
-        <!-- Stats -->
-        <div class="stats-row">
-            <div class="stat-card stat-card-accent">
-                <div class="stat-label">Total Tasks</div>
-                <div class="stat-value" id="stat-total">—</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Pending</div>
-                <div class="stat-value" id="stat-pending">—</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">In Progress</div>
-                <div class="stat-value stat-gold" id="stat-inprogress">—</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Completed</div>
-                <div class="stat-value" style="color: #5cc991" id="stat-done">—</div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <div class="controls">
-            <div class="filter-group">
-                <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
-                <button class="filter-btn" onclick="setFilter('pending', this)">Pending</button>
-                <button class="filter-btn" onclick="setFilter('in_progress', this)">In Progress</button>
-                <button class="filter-btn" onclick="setFilter('done', this)">Done</button>
-            </div>
-        </div>
-
-        <!-- Table -->
-        <div class="table-wrap">
-            <div class="table-header-row">
-                <div class="th">Task</div>
-                <div class="th">Priority</div>
-                <div class="th">Due Date</div>
-                <div class="th">Status</div>
-                <div class="th">Actions</div>
-            </div>
-            <div id="task-list">
-                <!-- rows injected here -->
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <div class="footer-brand"><span>Task</span> Manager (c) 2026</div>
-        </div>
-
-    </div>
-
-    <!-- ── CREATE TASK MODAL ── -->
-    <div class="modal-overlay" id="taskModal">
-        <div class="modal-box">
-            <div class="modal-header">
-                <div class="modal-title">Create New Task</div>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="gold-bar"></div>
-            <form id="taskForm" onsubmit="submitTask(event)">
-                <div class="form-group">
-                    <label class="form-label">Task Title</label>
-                    <input type="text" id="f-title" class="form-input" placeholder="e.g. Prepare Q2 Investment Report"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Due Date</label>
-                    <input type="date" id="f-due" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Priority Level</label>
-                    <select id="f-priority" class="form-select">
-                        <option value="high">High</option>
-                        <option value="medium" selected>Medium</option>
-                        <option value="low">Low</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="btn-submit">Create Task</button>
-                </div>
-            </form>
+    <!-- Controls -->
+    <div class="controls">
+        <div class="filter-group">
+            <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+            <button class="filter-btn" onclick="setFilter('pending', this)">Pending</button>
+            <button class="filter-btn" onclick="setFilter('in_progress', this)">In Progress</button>
+            <button class="filter-btn" onclick="setFilter('done', this)">Done</button>
         </div>
     </div>
 
-    <script>
-        let allTasks = [];
-        let activeFilter = 'all';
+    <!-- Table -->
+    <div class="table-wrap">
+        <div class="table-header-row">
+            <div class="th">Task</div>
+            <div class="th">Priority</div>
+            <div class="th">Due Date</div>
+            <div class="th">Status</div>
+            <div class="th">Actions</div>
+        </div>
+        <div id="task-list">
+            <!-- rows injected here -->
+        </div>
+    </div>
 
-        // Set today's date in header
-        document.getElementById('today-date').textContent =
-            new Date().toLocaleDateString('en-KE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-brand"><span>Task</span> Manager (c) 2026</div>
+    </div>
 
-        // Set default date to today in modal
-        document.getElementById('f-due').min = new Date().toISOString().split('T')[0];
-        document.getElementById('f-due').value = new Date().toISOString().split('T')[0];
+</div>
 
-        async function fetchTasks() {
-            try {
-                const res = await fetch('/api/tasks');
-                const data = await res.json();
-                allTasks = Array.isArray(data) ? data : [];
-                renderAll();
-            } catch (e) {
-                console.error(e);
-            }
+<!-- -- CREATE TASK MODAL -- -->
+<div class="modal-overlay" id="taskModal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <div class="modal-title">Create New Task</div>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="gold-bar"></div>
+        <form id="taskForm" onsubmit="submitTask(event)">
+            <div class="form-group">
+                <label class="form-label">Task Title</label>
+                <input type="text" id="f-title" class="form-input" placeholder="e.g. Prepare Q2 Investment Report" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Due Date</label>
+                <input type="date" id="f-due" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Priority Level</label>
+                <select id="f-priority" class="form-select">
+                    <option value="high">High</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn-submit">Create Task</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    let allTasks = [];
+    let activeFilter = 'all';
+
+    // Set today's date in header
+    document.getElementById('today-date').textContent =
+        new Date().toLocaleDateString('en-KE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    // Set default date to today in modal
+    document.getElementById('f-due').min = new Date().toISOString().split('T')[0];
+    document.getElementById('f-due').value = new Date().toISOString().split('T')[0];
+
+    async function fetchTasks() {
+        try {
+            const res = await fetch('/api/tasks');
+            const data = await res.json();
+            allTasks = Array.isArray(data) ? data : [];
+            renderAll();
+        } catch (e) {
+            console.error(e);
         }
+    }
 
-        function renderAll() {
-            updateStats();
-            renderRows();
-        }
+    function renderAll() {
+        updateStats();
+        renderRows();
+    }
 
-        function updateStats() {
-            document.getElementById('stat-total').textContent = allTasks.length;
-            document.getElementById('stat-pending').textContent = allTasks.filter(t => t.status === 'pending').length;
-            document.getElementById('stat-inprogress').textContent = allTasks.filter(t => t.status === 'in_progress').length;
-            document.getElementById('stat-done').textContent = allTasks.filter(t => t.status === 'done').length;
-        }
+    function updateStats() {
+        document.getElementById('stat-total').textContent     = allTasks.length;
+        document.getElementById('stat-pending').textContent   = allTasks.filter(t => t.status === 'pending').length;
+        document.getElementById('stat-inprogress').textContent= allTasks.filter(t => t.status === 'in_progress').length;
+        document.getElementById('stat-done').textContent      = allTasks.filter(t => t.status === 'done').length;
+    }
 
-        function renderRows() {
-            const list = document.getElementById('task-list');
-            const filtered = activeFilter === 'all' ? allTasks : allTasks.filter(t => t.status === activeFilter);
+    function renderRows() {
+        const list = document.getElementById('task-list');
+        const filtered = activeFilter === 'all' ? allTasks : allTasks.filter(t => t.status === activeFilter);
 
-            if (filtered.length === 0) {
-                list.innerHTML = `
+        if (filtered.length === 0) {
+            list.innerHTML = `
                 <div class="empty-state">
                     <div class="empty-icon">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8fa3be" stroke-width="1.5" stroke-linecap="round">
@@ -842,23 +752,23 @@
                     <div class="empty-title">No tasks found</div>
                     <div class="empty-sub">Create a new task to get started</div>
                 </div>`;
-                return;
+            return;
+        }
+
+        list.innerHTML = filtered.map(task => {
+            const dateStr = new Date(task.due_date).toLocaleDateString('en-KE', { day: '2-digit', month: 'short', year: 'numeric' });
+            const statusLabel = task.status.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+            let actionBtn = '';
+            if (task.status === 'pending') {
+                actionBtn = `<button class="btn-sm btn-advance" onclick="advance(${task.id}, 'pending')">Start</button>`;
+            } else if (task.status === 'in_progress') {
+                actionBtn = `<button class="btn-sm btn-advance" onclick="advance(${task.id}, 'in_progress')">Complete</button>`;
+            } else {
+                actionBtn = `<button class="btn-sm btn-delete" onclick="deleteTask(${task.id})">Delete</button>`;
             }
 
-            list.innerHTML = filtered.map(task => {
-                const dateStr = new Date(task.due_date).toLocaleDateString('en-KE', { day: '2-digit', month: 'short', year: 'numeric' });
-                const statusLabel = task.status.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase());
-
-                let actionBtn = '';
-                if (task.status === 'pending') {
-                    actionBtn = `<button class="btn-sm btn-advance" onclick="advance(${task.id}, 'pending')">Start</button>`;
-                } else if (task.status === 'in_progress') {
-                    actionBtn = `<button class="btn-sm btn-advance" onclick="advance(${task.id}, 'in_progress')">Complete</button>`;
-                } else {
-                    actionBtn = `<button class="btn-sm btn-delete" onclick="deleteTask(${task.id})">Delete</button>`;
-                }
-
-                return `
+            return `
             <div class="task-row">
                 <div class="task-title-cell">
                     <div class="task-dot dot-${task.priority}"></div>
@@ -876,84 +786,83 @@
                 </div>
                 <div class="row-actions">${actionBtn}</div>
             </div>`;
-            }).join('');
-        }
+        }).join('');
+    }
 
-        function setFilter(f, el) {
-            activeFilter = f;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            el.classList.add('active');
-            renderRows();
-        }
+    function setFilter(f, el) {
+        activeFilter = f;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        el.classList.add('active');
+        renderRows();
+    }
 
-        async function advance(id, current) {
-            const next = current === 'pending' ? 'in_progress' : 'done';
-            const res = await fetch(`/api/tasks/${id}/status`, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ status: next })
-            });
-            if (res.ok) {
-                toast(`Task moved to ${next.replace('_', ' ')}`);
-                fetchTasks();
-            }
-        }
-
-        async function deleteTask(id) {
-            if (!confirm('Delete this completed task?')) return;
-            const res = await fetch(`/api/tasks/${id}`, { method: 'DELETE' });
-            if (res.ok) {
-                toast('Task deleted');
-                fetchTasks();
-            }
-        }
-
-        async function submitTask(e) {
-            e.preventDefault();
-            const res = await fetch('/api/tasks', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    title: document.getElementById('f-title').value,
-                    due_date: document.getElementById('f-due').value,
-                    priority: document.getElementById('f-priority').value
-                })
-            });
-            const data = await res.json();
-            if (res.ok) {
-                toast('Task created successfully');
-                closeModal();
-                document.getElementById('taskForm').reset();
-                document.getElementById('f-due').value = new Date().toISOString().split('T')[0];
-                fetchTasks();
-            } else {
-                const msg = data.errors ? Object.values(data.errors).flat()[0] : 'Validation error';
-                toast(msg, true);
-            }
-        }
-
-        function openModal() { document.getElementById('taskModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('taskModal').style.display = 'none'; }
-
-        // Close modal on overlay click
-        document.getElementById('taskModal').addEventListener('click', function (e) {
-            if (e.target === this) closeModal();
+    async function advance(id, current) {
+        const next = current === 'pending' ? 'in_progress' : 'done';
+        const res = await fetch(`/api/tasks/${id}/status`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: next })
         });
-
-        function toast(msg, isError = false) {
-            const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.className = isError ? 'toast-error' : '';
-            t.style.display = 'block';
-            setTimeout(() => t.style.display = 'none', 3000);
+        if (res.ok) {
+            toast(`Task moved to ${next.replace('_', ' ')}`);
+            fetchTasks();
         }
+    }
 
-        function escHtml(s) {
-            return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    async function deleteTask(id) {
+        if (!confirm('Delete this completed task?')) return;
+        const res = await fetch(`/api/tasks/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+            toast('Task deleted');
+            fetchTasks();
         }
+    }
 
-        fetchTasks();
-    </script>
+    async function submitTask(e) {
+        e.preventDefault();
+        const res = await fetch('/api/tasks', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                title: document.getElementById('f-title').value,
+                due_date: document.getElementById('f-due').value,
+                priority: document.getElementById('f-priority').value
+            })
+        });
+        const data = await res.json();
+        if (res.ok) {
+            toast('Task created successfully');
+            closeModal();
+            document.getElementById('taskForm').reset();
+            document.getElementById('f-due').value = new Date().toISOString().split('T')[0];
+            fetchTasks();
+        } else {
+            const msg = data.errors ? Object.values(data.errors).flat()[0] : 'Validation error';
+            toast(msg, true);
+        }
+    }
+
+    function openModal()  { document.getElementById('taskModal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('taskModal').style.display = 'none'; }
+
+    // Close modal on overlay click
+    document.getElementById('taskModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    function toast(msg, isError = false) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = isError ? 'toast-error' : '';
+        t.style.display = 'block';
+        setTimeout(() => t.style.display = 'none', 3000);
+    }
+
+    function escHtml(s) {
+        return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    fetchTasks();
+</script>
 </body>
-
 </html>

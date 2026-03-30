@@ -12,7 +12,8 @@ use Illuminate\Validation\Rule;
 class TaskController extends Controller
 {
     /**
-     * Display a listing of tasks.
+     * List tasks.
+     * Optional status query parameter.
      */
     public function index(Request $request)
     {
@@ -37,7 +38,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Store a newly created task.
+     * Create a new task in the system.
      */
     public function store(Request $request)
     {
@@ -67,7 +68,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Update the status of a task.
+     * Update existing task status.
      */
     public function updateStatus(Request $request, $id)
     {
@@ -94,7 +95,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Remove the specified task from storage.
+     * Delete existing task.
      */
     public function destroy($id)
     {
@@ -110,7 +111,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Generates a daily task count report.
+     * Daily task report engine.
      */
     public function report(Request $request)
     {
