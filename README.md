@@ -53,10 +53,53 @@ php artisan serve
 
 ---
 
-## Example API Endpoint Testing
+## API Testing with Postman
 
-### Daily Report Summary
-`GET /api/tasks/report?date=2026-03-31`
+To test the API using Postman, use the following endpoint configurations. Replace `[URL]` with either `http://localhost:8000` (Local) or the Hosted URL.
+
+### 1. List All Tasks
+- **Endpoint**: `GET [URL]/api/tasks`
+- **Method**: `GET`
+- **Description**: Returns all tasks sorted by priority and due date.
+
+### 2. Create a New Task
+- **Endpoint**: `POST [URL]/api/tasks`
+- **Method**: `POST`
+- **Headers**: `Accept: application/json`, `Content-Type: application/json`
+- **Body (raw JSON)**:
+  ```json
+  {
+    "title": "Document audit",
+    "due_date": "2026-04-10",
+    "priority": "high"
+  }
+  ```
+
+### 3. Update Task Status
+- **Endpoint**: `PATCH [URL]/api/tasks/{id}/status`
+- **Method**: `PATCH`
+- **Headers**: `Accept: application/json`, `Content-Type: application/json`
+- **Body (raw JSON)**:
+  ```json
+  {
+    "status": "in_progress"
+  }
+  ```
+- **Note**: Status transition must follow: pending -> in_progress -> done.
+
+### 4. Delete a Task
+- **Endpoint**: `DELETE [URL]/api/tasks/{id}`
+- **Method**: `DELETE`
+- **Note**: This will return a `403 Forbidden` if the task status is not "done".
+
+### 5. Generate Daily Report
+- **Endpoint**: `GET [URL]/api/tasks/report?date=YYYY-MM-DD`
+- **Method**: `GET`
+- **Example**: `[URL]/api/tasks/report?date=2026-03-31`
+
+---
+
+## Alternative: Testing with cURL
 
 ### Add New Task
 ```bash
@@ -71,14 +114,3 @@ curl -X PATCH http://localhost:8000/api/tasks/1/status \
 -H "Content-Type: application/json" \
 -d '{"status": "in_progress"}'
 ```
-
-### Delete Task
-```bash
-curl -X DELETE http://localhost:8000/api/tasks/1
-```
-(Returns 200 on success, or 403 if status is not "done")
-
----
-
-## Testing
-To run automated tests or verify endpoints, follow the cURL examples or use tools like Postman.
