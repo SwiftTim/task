@@ -12,8 +12,7 @@ use Illuminate\Validation\Rule;
 class TaskController extends Controller
 {
     /**
-     * List tasks sorted by priority (high → low), then due_date ascending.
-     * Optional status query parameter.
+     * Display a listing of tasks.
      */
     public function index(Request $request)
     {
@@ -38,9 +37,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Create a new task.
-     * Rules: title cannot duplicate a task with the same due_date,
-     * priority must be low, medium, high, and due_date must be today or later.
+     * Store a newly created task.
      */
     public function store(Request $request)
     {
@@ -70,8 +67,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Update task status (pending → in_progress → done).
-     * Rule: Cannot skip or revert status.
+     * Update the status of a task.
      */
     public function updateStatus(Request $request, $id)
     {
@@ -98,8 +94,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Delete a task.
-     * Rule: Only done tasks can be deleted.
+     * Remove the specified task from storage.
      */
     public function destroy($id)
     {
@@ -115,8 +110,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Bonus: Daily task report.
-     * Return counts per priority and status for the given day.
+     * Generates a daily task count report.
      */
     public function report(Request $request)
     {
